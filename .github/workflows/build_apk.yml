@@ -24,11 +24,10 @@ jobs:
           channel: 'stable'
 
       - name: Build APK
-        run: cd sweet_friend_app && flutter build apk --release
+        run: flutter build apk --release
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: sweet_friend_app/build/app/outputs/flutter-apk/app-release.apk
-          
+          path: build/app/outputs/flutter-apk/app-release.apk
