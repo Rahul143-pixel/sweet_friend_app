@@ -28,15 +28,14 @@ jobs:
           cache: true
 
       - name: Get Dependencies
-        run: flutter pub get
-        working-directory: sweet_friend_app
+        run: flutter pub get --directory=sweet_friend_app
 
       - name: Build APK
-        run: flutter build apk --release
-        working-directory: sweet_friend_app
+        run: flutter build apk --release --directory=sweet_friend_app
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-release
           path: sweet_friend_app/build/app/outputs/flutter-apk/app-release.apk
+          
